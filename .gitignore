@@ -1,0 +1,4 @@
+compiled/
+public/
+node_modules/
+src/*.html
