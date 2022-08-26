@@ -9,11 +9,17 @@
           (regexp-match #rx"README\\.md" path)
           (regexp-match #rx"\\.json$" path)))))
 
-(provide (all-defined-out))
+(require pollen/decode
+         pollen/template)
 
-(require pollen/template)
+(provide root
+         to-html
+         (all-defined-out))
 
 (define to-html ->html)
 
 (define (root . elems)
-  `(main () ,@elems))
+  `(main ()
+    ,@(decode-elements
+       elems
+       #:txexpr-elements-proc decode-paragraphs)))
