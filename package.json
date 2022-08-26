@@ -20,6 +20,6 @@
     }
   },
   "scripts": {
-    "public": "make public"
+    "public": "make public-dev"
   }
 }
