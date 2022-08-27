@@ -16,9 +16,11 @@ dev:
 # By not requiring the built CSS file, this avoids building the
 # minified version during development.
 public-dev: render
+	-emacsclient --eval '(message "Compiling...")'
 	raco pollen publish src /tmp/public
 	rsync -a /tmp/public/ public
 	-rm -rf /tmp/public
+	-emacsclient --eval '(message "Compiling...done")'
 
 .PHONY: dev dev-tailwind dev-pollen dev-server public-dev
 
