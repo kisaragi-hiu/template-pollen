@@ -7,7 +7,7 @@ let cjkFallback = [
 ];
 
 module.exports = {
-  content: ["src/**/*.{html.pm,html.p}"],
+  content: ["src/**/*.{html.pm,html.p,rkt}"],
   theme: {
     fontFamily: {
       sans: ["Fira Sans", ...cjkFallback, "sans-serif"],
